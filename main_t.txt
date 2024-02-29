@@ -1,0 +1,95 @@
+/*package main
+
+import (
+	"fmt"
+	docker "github.com/docker/docker/client"
+	cpu2 "github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/disk"
+	"github.com/shirou/gopsutil/host"
+	"github.com/shirou/gopsutil/mem"
+)
+
+func main() {
+	h, _ := host.Info()
+	info, _ := cpu2.Info()
+	//cpu, _ := ghw.CPU()
+	//memG, _ := ghw.Memory()
+	mem2, _ := mem.VirtualMemory()
+	disk2, _ := disk.Usage("/")
+	fmt.Println(info[0].ModelName)
+	fmt.Println(info[0].Cores)
+	fmt.Println(len(info))
+	fmt.Println(mem2.Available)
+	fmt.Println(mem2.Total)
+	fmt.Println(info[0].Mhz)
+	fmt.Println(h.PlatformVersion)
+	fmt.Println(disk2.Total)
+		client, err := docker.NewClientWithOpts(docker.FromEnv, docker.WithAPIVersionNegotiation())
+		if err != nil {
+			log.Fatalf("failed connecting to Docker Engine: %e", err)
+		}
+		defer client.Close()
+
+	/*    client.ContainerCreate(context.Background(), &container.Config{
+	          Image:        "itzg/minecraft-server",
+	          Tty:          true,
+	          AttachStdin:  true,
+	          AttachStdout: true,
+	          OpenStdin:    true,
+	          ExposedPorts: nat.PortSet{
+	              "25565/tcp": struct{}{},
+	          },
+	          Env: []string{
+	              "EULA=true",
+	          },
+	      }, nil, nil, nil, "hello_world")
+	*/
+	/*    lresp, _ := client.ContainerLogs(context.Background(), "hello_world", types.ContainerLogsOptions{
+	          ShowStdout: true,
+	          ShowStderr: true,
+	      })
+	      // io.Copy(os.Stdout, lresp)
+	      // b, _ := io.ReadAll(lresp)
+	      if err != nil {
+	          log.Fatal(err)
+	      }
+	      defer lresp.Close()*/
+
+	/*    resp, err := client.ContainerAttach(context.Background(), "hello_world", types.ContainerAttachOptions{
+	          Stdin:  true,
+	          Stream: true,
+	          Logs:   true,
+	          Stdout: true,
+	          Stderr: true,
+	      })
+	      if err != nil {
+	          log.Fatal(err)
+	      }
+	      defer resp.Close()
+
+	      _, err = resp.Conn.Write([]byte("list\x0D"))
+	      if err != nil {
+	          log.Fatal(err)
+	      }
+	      for {
+	          io.Copy(os.Stdout, resp.Reader)
+	      }*/
+
+	/*    cs := container.ContainerServer{
+	      Client: client,
+	  }*/
+
+	/*    server := grpc.NewServer()
+	      protoapi.RegisterContainerServer(server, cs)
+
+	      listen, err := net.Listen("tcp", ":8080")
+	      if err != nil {
+	          log.Fatalf("failed creating gRPC server listener: %e", err)
+	      }
+
+	      err = server.Serve(listen)
+	      if err != nil {
+	          log.Fatalf("failed starting gRPC server: %e", err)
+	      }*/
+}
+*/
